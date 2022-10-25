@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 
+import chalk from 'chalk';
 import yargs from 'yargs/yargs';
 import { DiceRoller, exportFormats, NumberGenerator } from '@dice-roller/rpg-dice-roller';
+
+const textStyles = {
+  error: chalk.red.bold,
+  success: chalk.greenBright.bold,
+  warning: chalk.yellowBright.bold,
+};
 
 const engines = NumberGenerator.engines;
 const generator = NumberGenerator.generator;
@@ -24,7 +31,7 @@ yargs()
     handler: (argv) => {
       if (argv.e) {
         if (!engines[argv.e]) {
-          console.error('Engine is invalid.');
+          console.error(textStyles.error(`Error: Engine "${argv.e}" is invalid.`));
           process.exit(1);
         }
 
