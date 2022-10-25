@@ -2,7 +2,7 @@
   "name": "@dice-roller/cli",
   "description": "A command line interface for rolling dice.",
   "author": "GreenImp Media <info@greenimp.co.uk> (https://greenimp.co.uk)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
