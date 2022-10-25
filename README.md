@@ -42,22 +42,22 @@ Examples:
 
 ```bash
 # Roll a 6 sided die 4 times
-roll 4d6
+roller 4d6
 
 # Roll a series of dice
-roll 2d10 7d% 5dF
+roller 2d10 7d% 5dF
 
 # Notation with spaces must be surrounded with quotes
-roll "4d6 # roll description"
+roller "4d6 # roll description"
 
 # Use the MersenneTwister19937 engine (See is not required)
-roll 4d6 -e=MersenneTwister19937 --seed=415
+roller 4d6 -e=MersenneTwister19937 --seed=415
 
 # Return just the result rolled
-roll 2d20 --result-only
+roller 2d20 --result-only
 
 # Output the result in base64 encoding
-roll 6d8*4 -f=BASE_64
+roller 6d8*4 -f=BASE_64
 ```
 
 Read about the notation in the [documentation](https://dice-roller.github.io/documentation/)
