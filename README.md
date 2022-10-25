@@ -21,9 +21,21 @@ npm install -g @dice-roller/cli
 ### Usage
 
 ```
-Usage: roll [notations]
+roller <notation..> [options]
+roller roll <notation..> [options]
 
-Roll dice notation
+Positionals:
+  notation  space separated list of notation to roll                    [string]
+
+Options:
+      --version      Show version number                               [boolean]
+  -s, --separator    String to separate dice rolls      [string] [default: "; "]
+  -e, --engine       The RNG engine to use                              [string]
+      --seed         The RNG engine seed                                [number]
+  -f, --format       The output format              [string] [default: "string"]
+      --result-only  Only return the roll result, without the notation or dice
+                     rolled                           [boolean] [default: false]
+      --help         Show help                                         [boolean]
 ```
 
 Examples:
@@ -37,6 +49,15 @@ roll 2d10 7d% 5dF
 
 # Notation with spaces must be surrounded with quotes
 roll "4d6 # roll description"
+
+# Use the MersenneTwister19937 engine (See is not required)
+roll 4d6 -e=MersenneTwister19937 --seed=415
+
+# Return just the result rolled
+roll 2d20 --result-only
+
+# Output the result in base64 encoding
+roll 6d8*4 -f=BASE_64
 ```
 
 Read about the notation in the [documentation](https://dice-roller.github.io/documentation/)
