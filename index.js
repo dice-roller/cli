@@ -17,10 +17,11 @@ const roller = new DiceRoller();
 yargs()
   .scriptName('roller')
   .usage('$0 <notation..> [options]')
-  .usage('$0 roll <notation..> [options]')
+  .example('$0 4d6', 'roll a 6 sided die 4 times')
+  .example('$0 2d10+7', 'roll a 10 sided die 2 times and add 7')
   .command({
-    command: 'roll <notation..>',
-    aliases: ['$0'],
+    command: '$0 <notation..>',
+    aliases: ['roll'],
     desc: 'roll the dice',
     builder: (yargs) => {
       yargs.positional('notation', {
