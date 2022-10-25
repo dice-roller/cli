@@ -94,5 +94,7 @@ yargs()
   .demandCommand()
   .epilog('for more information visit https://dice-roller.github.io/documentation')
   .help()
+  .alias('version', 'V')
+  .strict()
   //.argv;
   .parse(process.argv.slice(2));
