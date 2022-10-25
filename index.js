@@ -43,6 +43,8 @@ yargs()
 
       if (argv.f in exportFormats) {
         console.log(roller.export(exportFormats[argv.f]));
+      } else if (argv['result-only']) {
+        console.log(roller.total);
       } else {
         console.log(`${roller.log.join(argv.s)}`);
       }
@@ -73,6 +75,12 @@ yargs()
       describe: 'The output format',
       type: 'string',
       default: 'string',
+    },
+    'result-only': {
+      demandOption: false,
+      description: 'Only return the roll result, without the notation or dice rolled',
+      type: 'boolean',
+      default: false,
     },
   })
   .demandCommand()
