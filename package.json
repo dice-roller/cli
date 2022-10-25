@@ -1,0 +1,46 @@
+{
+  "name": "@dice-roller/cli",
+  "description": "A command line interface for rolling dice.",
+  "author": "GreenImp Media <info@greenimp.co.uk> (https://greenimp.co.uk)",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dice-roller/cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dice-roller/cli/issues"
+  },
+  "homepage": "https://dice-roller.github.io/documentation",
+  "funding": [
+    "https://github.com/sponsors/dice-roller",
+    "https://github.com/sponsors/GreenImp"
+  ],
+  "keywords": [
+    "dice",
+    "roller",
+    "rpg",
+    "roll",
+    "d&d",
+    "dnd",
+    "random",
+    "prng",
+    "roleplay",
+    "pathfinder",
+    "notation",
+    "cli",
+    "command line interface"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "roller": "./index.js"
+  },
+  "engines": {
+    "node": ">=12.0"
+  },
+  "dependencies": {
+    "@dice-roller/rpg-dice-roller": "^5.2.0",
+    "yargs": "^17.6.0"
+  }
+}
