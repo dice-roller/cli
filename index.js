@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs/yargs';
+import Play from './lib/play.js';
 import Roller from './lib/roll.js';
 
 yargs()
@@ -54,6 +55,11 @@ yargs()
         })
     },
     handler: Roller,
+  })
+  .command({
+    command: 'play',
+    desc: 'Play a game',
+    handler: Play,
   })
   .demandCommand()
   .epilog('for more information visit https://dice-roller.github.io/documentation')
