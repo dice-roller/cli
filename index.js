@@ -9,6 +9,7 @@ yargs()
   .usage('$0 <notation..> [options]')
   .example('$0 4d6', 'roll a 6 sided die 4 times')
   .example('$0 2d10+7', 'roll a 10 sided die 2 times and add 7')
+  .example('$0 play', 'start the interactive CLI dice game')
   .command({
     command: '$0 <notation..>',
     aliases: ['roll'],
@@ -58,7 +59,7 @@ yargs()
   })
   .command({
     command: 'play',
-    desc: 'Play a game',
+    desc: 'play an interactive CLI dice game',
     handler: Play,
   })
   .demandCommand()
