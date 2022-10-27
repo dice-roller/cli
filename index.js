@@ -60,6 +60,19 @@ yargs()
   .command({
     command: 'play',
     desc: 'play an interactive CLI dice game',
+    builder: (yargs) => {
+      yargs
+        .options({
+          'players': {
+            describe: 'The name of a player',
+            type: 'array',
+          },
+          count: {
+            describe: 'The number of players',
+            type: 'number',
+          },
+        });
+    },
     handler: Play,
   })
   .demandCommand()
