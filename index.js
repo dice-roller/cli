@@ -71,12 +71,13 @@ yargs()
             describe: 'The number of players',
             type: 'number',
           },
-        });
+        })
+        .epilog('For more information visit https://dice-roller.github.io/documentation');
     },
     handler: Play,
   })
   .demandCommand()
-  .epilog('for more information visit https://dice-roller.github.io/documentation')
+  .epilog('For more information visit https://dice-roller.github.io/documentation')
   .help()
   .alias('version', 'V')
   .strict()
