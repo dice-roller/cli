@@ -52,7 +52,7 @@ roller "4d6 # roll description"
 
 # Use the MersenneTwister19937 engine (See is not required)
 roller 4d6 -e=MersenneTwister19937 --seed=415
-
+absility
 # Return just the result rolled
 roller 2d20 --result-only
 

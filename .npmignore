@@ -3,6 +3,8 @@
 
 # Except for these
 !/index.js
+!/lib
+!/lib/**/*
 !CONTRIBUTING.md
 !licence.txt
 !LICENSE
