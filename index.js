@@ -3,8 +3,9 @@
 import yargs from 'yargs/yargs';
 import Play from './lib/play.js';
 import Roller from './lib/roll.js';
+import textStyles from './lib/output.js';
 
-yargs()
+const cli = yargs()
   .scriptName('roller')
   .usage('$0 <notation..> [options]')
   .example('$0 4d6', 'roll a 6 sided die 4 times')
@@ -76,10 +77,19 @@ yargs()
     },
     handler: Play,
   })
+  .option('color', {
+    type: 'boolean',
+    describe: 'Enable colour in roll output (use --no-color to disable it)',
+  })
   .demandCommand()
   .epilog('For more information visit https://dice-roller.github.io/documentation')
   .help()
   .alias('version', 'V')
-  .strict()
-  //.argv;
-  .parse(process.argv.slice(2));
+  .strict();
+
+try {
+  await cli.parseAsync(process.argv.slice(2));
+} catch (error) {
+  console.error(textStyles.error(`Error: ${error.message}`));
+  process.exitCode = 1;
+}
